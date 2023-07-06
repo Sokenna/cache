@@ -1,6 +1,7 @@
 package cache
 
 import (
+	"fmt"
 	"sync"
 	"time"
 )
@@ -53,4 +54,9 @@ func (c *cache) Set(k string, x interface{}, d time.Duration) {
 		Expiration: e,
 	}
 	c.mu.Unlock()
+}
+func Hello(name string) string {
+	// Return a greeting that embeds the name in a message.
+	message := fmt.Sprintf("Hi, %v. Welcome!", name)
+	return message
 }
